@@ -1,0 +1,13 @@
+doctype html
+html
+    head 
+        meat(charset='utf-8')
+        title 动态页面
+    body
+        h1 这是一个动态页面
+        ul
+            li!=name
+            li!=age
+            li!=city
+            each book in books
+                li!=book 

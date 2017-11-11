@@ -1,0 +1,16 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title 唯品会
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        .container
+            img(src!=top_img)
+            each content in contents
+                .content_box
+                    img.bg_img(src!=content.bg_img)
+                    //引入子模板 
+                    include small_box
+                    include big_box
+

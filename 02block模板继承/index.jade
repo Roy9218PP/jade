@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        meat(charset='utf-8')
+        title jade的block语法
+    body
+        h1 这是一个父模板
+        //jade的模板是可以被继承的,jade提供了一个block用来定义一个可以进行重写和部分重写的代码块
+        //定义block,名字叫做xxx
+        block xxx
+            p 这是一个可以被继承并重写的p标签
+            div xxxx
+
+        block ooo
+            p 这是父模板中的ooo block
+        
+        block aaa
+            p 这是父模板的aaa block
+    

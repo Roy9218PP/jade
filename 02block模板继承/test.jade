@@ -1,0 +1,17 @@
+//extends关键字用来继承某一个模板
+//当前的test模板继承于index模板,可以继承index模板所有的内容
+extends index
+
+//可以使用block来重写父模板的block块代码.
+//下边的写法会会直接覆盖父模板中block中的内容.即完全重写。
+block xxx
+    p 这是完全覆盖了父模板中block的内容
+
+//下边的写法 block 后多了一个append执令,代表不是完全覆盖父模板的block,而是往原有block中追加内容
+
+block append ooo
+    p 子模板追加的内容
+
+//下边的写法 block多了一个prepend关键字，代表往父模板开头追加内容
+block prepend aaa
+    p 子模板中往开头追加的内容

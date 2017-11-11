@@ -1,0 +1,12 @@
+doctype html
+html
+    head
+        meat(charset='utf-8')
+        title include模板引入
+    body
+        h1 这是一个父模板
+        //jade提供了include指令用于引入子模板
+        include child1
+        include child2
+        .adiv
+            include child1

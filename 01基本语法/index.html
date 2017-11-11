@@ -1,0 +1,86 @@
+
+<!--首先先全局安装jade: npm install -g jade-->
+<!--jade 是对缩进、空格以及单词非常敏感的模板引擎,所以在编写jade模板的时候不要随便空格和缩进-->
+<!--平级标签无需缩进,换行即可;父子标签需要换行和tab缩进;--><!DOCTYPE html>
+<html>
+  <head>
+    <!--属性使用(属性=属性值),多个属性使用','分割。-->
+    <meta charset="utf-8">
+    <!--标签后边空格 代表设置innerHTML内容-->
+    <title>jade学习</title>
+  </head>
+  <body>
+    <h1>这回一个标题</h1>
+    <!--默认标签就是div标签。#代表设置id属性-->
+    <div id="adiv">这是一个id为#adiv的div标签</div>
+    <div id="xxx" class="ooo">这是有id和class属性的div标签</div>
+    <p class="xxx ooo">这是有多个class属性值的p标签</p><a href="http://www.baidu.com" target="_self">百度</a>
+    <!--jade模板还支持定义变量。#{}是取值表达式;还可以使用'='或是'!='-->
+    <p>roy</p>
+    <p>roy</p>
+    <p>roy</p>
+    <!--'='和'!='的区别:'='会把变量中的箭头替换为"&lt;"和"&gt;",而'!='不会-->
+    <p>&lt;span&gt;这是一个span&lt;/span&gt;</p>
+    <p><span>这是一个span</span></p>
+    <!--由上边的取值的三种方式可以看出'='、'!'以及'#'都是特殊字符,所以保留特殊字符原有格式需要使用转义字符:'\'-->
+    <p>#{name}</p>
+    <!--'#{}'和'='的区别-->
+    <input type="text" value="roy">
+    <input type="text" value="name">
+    <input type="text" value="roy">
+    <input type="text" value="roy">
+    <!--多行文本。使用'.'可以保留多行的换行格式。-->
+    <p>
+      第一行
+      第二行
+      第三行
+      
+    </p>
+    <p>
+       
+      第一行
+      第二行
+      第三行
+    </p>
+    <!--注意script加'.'和不加区别很明显-->
+    <script>
+      console.log('1111111')
+      console.log('2222222')
+      console.log('3333333')
+      
+    </script>
+    <!--jade同样支持条件控制语句-->
+    <!--if...else-->
+    <p>isTrue的值是true</p>
+    <!--case...when-->
+    <p>33333333333</p>
+    <!--for...in...遍历对象-->
+    <p>roy</p>
+    <p>name:roy</p>
+    <p>28</p>
+    <p>age:28</p>
+    <!--each...in...遍历数组、集合和对象-->
+    <!--遍历数组-->
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JS</li>
+    </ul>
+    <!--遍历对象-->
+    <p>name --- tom</p>
+    <p>age --- 20</p>
+    <p>city --- 南京</p>
+    <!--jade还支持函数等混合语法(Mixin)-->
+    <!--mixin定义函数-->
+    <!--使用'+'执行函数-->
+        <ul>
+          <li>5</li>
+          <li>1</li>
+          <li>2</li>
+          <li>4</li>
+        </ul>
+  </body>
+</html>
+<!--使用jade xxx.jade 可以将xxx.jade 编译为xxx.html文件.但是编译后的代码没有换行和缩进格式。-->
+<!--jade -P xxx.jade 可以编译并保留换行和缩进格式。-->
+<!--jade -P -w xxx.jade 可以编译并保留换行和缩进格式同时进入监听模式,只要jade文件被修改,就会自动重新编译。-->
